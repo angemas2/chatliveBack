@@ -29,7 +29,7 @@ router.delete("/users/:name", function (req, res) {
   res.sendStatus(204);
 });
 
-router.post("/users/:name/:messages", function (req, res) {
+router.post("/users/:name/messages", function (req, res) {
   console.log("User " + req.params.name + " sent message: " + req.body.message);
   pusher.trigger("chat_channel", "message", {
     name: req.params.name,
